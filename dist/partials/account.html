@@ -1,0 +1,30 @@
+<div content-for="title">
+  <span>Account</span>
+</div>
+<div class="scrollable inverse">  
+  <div class="scrollable-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="wrap">
+            <img ng-src="{{profile.avatar}}" alt="" class="pp">
+          </div>
+          <div class="list-group">
+            <div class="list-group-item">
+              <input type="text" ng-model="profile.name" placeholder="Nama" class="form-control no-border">
+            </div>
+            <div class="list-group-item">
+              <input type="text" ng-model="profile.nim" placeholder="NIM" class="form-control no-border">
+            </div>
+            <div class="list-group-item">
+              <select ng-init="profile.gender = profile.gender || genders[0].id" ng-model="profile.gender" ng-options="item.id as item.name for item in genders" class="form-control no-border">
+                <option value="" disabled selected>Gender</option>
+              </select>
+            </div>
+          </div>
+          <button ng-click="logout()" class="btn btn-danger form-control"><i class="fa fa-sign-out"></i> Log Out</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>RangerID - Web Ranger</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/app.css"/>
+
+  <!--<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="css/mobile-angular-ui-hover.min.css" />
+  <link rel="stylesheet" href="css/mobile-angular-ui-base.min.css" />
+  <link rel="stylesheet" href="css/mobile-angular-ui-desktop.min.css" />
+  <link rel="stylesheet" href="css/demo.css" />
+  <link rel="stylesheet" href="css/grayscale.css" />
+  <!-- <script src="js/demo.js"></script> -->
+</head>
+<body ng-cloak>
+  <div ng-hide-auth>
+    <div ng-include="'partials/login.html'" ng-controller="LoginCtrl"></div>
+  </div>
+
+  <!-- Sidebars -->
+  <div ng-include="'partials/sidebar.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
+
+  <div ng-include="'partials/sidebarRight.html'" class="sidebar sidebar-right" toggleable parent-active-class="sidebar-right-in" id="rightSidebar"></div>
+
+  <div class="app">
+
+    <!-- Navbars -->
+
+    <div class="navbar navbar-app navbar-absolute-top">
+      <div class="navbar-brand navbar-brand-center" yield-to="title">
+        <span>Ranger<strong>ID</strong></span>
+      </div>
+      <div class="btn-group pull-left">
+        <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+      <div class="btn-group pull-right" yield-to="navbarAction">
+        <div ng-click="toggle('rightSidebar')" class="btn btn-navbar">
+          <i class="fa fa-comment"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar navbar-app navbar-absolute-bottom">
+      <div class="btn-group justified">
+        <a href="#/account" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> Account</a>
+        <a href="#/repository" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> Repo</a>
+        <a href="#/about" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> About</a>
+      </div>
+    </div>
+
+    <!-- App Body -->
+    <div class="app-body" ng-class="{loading: loading}">
+      <div ng-show="loading" class="app-content-loading">
+        <i class="fa fa-circle-o-notch fa-spin loading-spinner"></i>
+      </div>
+
+      <ng-view class="app-content" ng-hide="loading"></ng-view>
+    </div>
+
+  </div><!-- ~ .app -->
+
+  
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular-route.js"></script>
+<script src="//cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+<script src="//cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
+<script src="//cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/angular-touch.min.js"></script>
+  <script src="lib/angular-charts.min.js"></script>
+  <script src="js/mobile-angular-ui.min.js"></script>
+
+
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/decorators.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/firebase.utils.js"></script>
+  <script src="js/simpleLogin.js"></script>
+  <script src="js/changeEmail.js"></script>
+</body>
+</html>

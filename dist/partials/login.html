@@ -1,0 +1,15 @@
+<div class="full-overlay">
+    
+    <div class="center-box">
+        <div class="logo-icon"></div>
+        <form>
+            <div class="form-group">
+                <input type="number" ng-model="nim" placeholder="NIM" class="form-control" />
+            </div>
+            <a href="#" class="btn btn-white btn-lg form-control" ng-click="login(nim)"><i class="fa fa-github-square"></i> Login with github</a>
+            
+            <div ng-show="err" class="alert alert-danger clear-box">{{err}}</div>
+        </form>
+    </div>
+
+</div>
