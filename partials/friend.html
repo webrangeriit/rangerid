@@ -1,0 +1,29 @@
+<div content-for="title">
+  <span>Member Account</span>
+</div>
+<div class="scrollable inverse">  
+  <div class="scrollable-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="wrap">
+            <img ng-src="{{friend.avatar}}" alt="" class="pp">
+          </div>
+          <div class="list-group">
+            <div class="list-group-item">
+              {{friend.name}}
+            </div>
+            <div class="list-group-item">
+              {{friend.nim}}
+            </div>
+            <div class="list-group-item">
+              <div ng-repeat="gender in genders | filter: {id: friend.gender}" ng-show="friend.gender">
+                {{gender.name}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

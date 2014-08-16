@@ -1,0 +1,17 @@
+<div content-for="title">
+  <span>Repository</span>
+</div>
+
+<input type="search" class="form-control app-search mob" placeholder="Search.." ng-model="search" />
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="list-group">
+      <div ng-repeat="item in repos | filter:search">
+      	<a href="{{item.html_url}}" class="list-group-item" target="_blank">
+        	{{ item.name }} <i class="fa fa-chevron-right pull-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

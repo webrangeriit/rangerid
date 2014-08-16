@@ -1,0 +1,17 @@
+<div content-for="title">
+  <span>Member</span>
+</div>
+
+<input type="search" class="form-control app-search mob" placeholder="Search.." ng-model="search" />
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="list-group">
+      <div ng-repeat="item in members | filter:search">
+        <a href="#/friend/{{members.$keyAt($index)}}" class="list-group-item">
+          <img ng-src="{{item.avatar}}" alt="" class="small"> {{ item.name }} <i class="fa fa-chevron-right pull-right mob"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
